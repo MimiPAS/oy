@@ -1,4 +1,3 @@
-
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -318,6 +317,210 @@
             line-height: 1.5;
         }
 
+        /* 🎮 GAME ZONE STYLES */
+        #foodmind-game {
+            margin-top: 10px;
+            padding: 20px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        #foodmind-game h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .game-intro {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #555;
+            font-size: 0.98em;
+        }
+
+        .game-mode-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .game-mode-btn {
+            border: none;
+            border-radius: 999px;
+            padding: 8px 18px;
+            cursor: pointer;
+            font-size: 0.95em;
+            background: #f1f3ff;
+            color: #555;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .game-mode-btn:hover {
+            background: #e0e4ff;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+
+        .game-mode-btn.active {
+            background: #667eea;
+            color: #fff;
+        }
+
+        #game-status-bar {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px 12px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        #game-status-bar .game-status-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .timer-wrapper {
+            margin-top: 8px;
+        }
+
+        .timer-label {
+            font-size: 0.9em;
+            margin-bottom: 4px;
+            color: #555;
+        }
+
+        .timer-bar {
+            width: 100%;
+            height: 10px;
+            border-radius: 999px;
+            background: #e0e0ff;
+            overflow: hidden;
+        }
+
+        #game-timer-fill {
+            height: 100%;
+            width: 100%;
+            background: #ffb74d;
+            transition: width 0.25s linear;
+        }
+
+        #game-question-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-bottom: 14px;
+            display: none;
+        }
+
+        #game-question-text {
+            font-size: 1.02em;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        #game-choices {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .game-choice-btn {
+            width: 100%;
+            text-align: left;
+            border-radius: 10px;
+            border: 1px solid #dcdcff;
+            padding: 8px 10px;
+            cursor: pointer;
+            background: #f9f9ff;
+            font-size: 0.95em;
+            transition: all 0.15s;
+        }
+
+        .game-choice-btn:hover {
+            background: #eef0ff;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+        }
+
+        .game-choice-btn.correct {
+            border-color: #66bb6a;
+            background: #e8f5e9;
+        }
+
+        .game-choice-btn.incorrect {
+            border-color: #ef5350;
+            background: #ffebee;
+        }
+
+        #game-feedback {
+            display: none;
+            background: #f9fbe7;
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        #game-feedback-brief {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        #game-feedback-explain {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        #game-next-btn,
+        #game-restart-btn {
+            margin-top: 8px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95em;
+            background: #aed581;
+            color: #234;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        #game-next-btn:hover,
+        #game-restart-btn:hover {
+            background: #9ccc65;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        #game-result-box {
+            display: none;
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-top: 4px;
+        }
+
+        #game-result-box h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: #1e88e5;
+        }
+
+        #game-result-message {
+            font-size: 0.95em;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.9em;
@@ -349,6 +552,8 @@
             <button class="nav-tab active" onclick="switchTab('quiz')">🎯 ทายนิสัย & Diary</button>
             <button class="nav-tab" onclick="switchTab('nutrition')">🥗 Nutrition</button>
             <button class="nav-tab" onclick="switchTab('tips')">💡 เคล็ดลับ</button>
+            <!-- 🎮 แท็บใหม่ Game Zone -->
+            <button class="nav-tab" onclick="switchTab('game')">🎮 Game Zone</button>
         </div>
 
         <div class="content">
@@ -601,6 +806,60 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Tab 4: GAME ZONE -->
+            <div id="game" class="tab-content">
+                <div id="foodmind-game">
+                    <h2>🎮 FoodMind Game Zone</h2>
+                    <p class="game-intro">
+                        Gamified Learning + Active Recall  
+                        เลือกโหมดเกม แล้วตอบคำถามให้ทันเวลาก่อนหมดเวลา!
+                    </p>
+
+                    <!-- โหมดเกม -->
+                    <div class="game-mode-selector">
+                        <button class="game-mode-btn" data-mode="healthy">🥦 Healthy Quiz</button>
+                        <button class="game-mode-btn" data-mode="decision">🍽️ Food Decision</button>
+                        <button class="game-mode-btn" data-mode="label">🏷️ Label Challenge</button>
+                    </div>
+
+                    <!-- สถานะเกม -->
+                    <div id="game-status-bar">
+                        <div class="game-status-row">
+                            <div>โหมด: <span id="game-mode-name">-</span></div>
+                            <div>คะแนน: <span id="game-score">0</span> ⭐</div>
+                            <div>ข้อที่ <span id="game-q-index">0</span>/<span id="game-q-total">0</span></div>
+                        </div>
+                        <div class="timer-wrapper">
+                            <div class="timer-label">⏱️ เวลา: <span id="game-time-left">20</span> วินาที</div>
+                            <div class="timer-bar">
+                                <div id="game-timer-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- คำถาม -->
+                    <div id="game-question-card">
+                        <div id="game-question-text"></div>
+                        <div id="game-choices"></div>
+                    </div>
+
+                    <!-- feedback -->
+                    <div id="game-feedback">
+                        <div id="game-feedback-brief"></div>
+                        <div id="game-feedback-explain"></div>
+                        <button id="game-next-btn">ข้อต่อไป ▶</button>
+                    </div>
+
+                    <!-- สรุปผล -->
+                    <div id="game-result-box">
+                        <h3>🎉 สรุปผลเกม</h3>
+                        <p>คุณได้ <span id="game-final-score">0</span> คะแนน จากทั้งหมด <span id="game-final-total">0</span> คะแนน</p>
+                        <p id="game-result-message"></p>
+                        <button id="game-restart-btn">เล่นใหม่อีกครั้ง 🔄</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -719,12 +978,7 @@
             const lastEntries = [...entries].slice(-10).reverse();
             for (const e of lastEntries) {
                 const li = document.createElement('li');
-                const foodLabel = personalities[e.food]
-                    ? e.label || Object.values(personalities).find(p => p === personalities[e.food]) 
-                    : '';
-                const name = personalities[e.food]
-                    ? e.name || getFoodThaiName(e.food)
-                    : e.food;
+                const name = getFoodThaiName(e.food);
                 li.textContent = `${e.date} – ${name}`;
                 diaryListEl.appendChild(li);
             }
@@ -859,7 +1113,6 @@
             healthInsightDiv.classList.remove('hidden');
             healthText.textContent = p.health;
 
-            // scroll ลงมาดูผล
             resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
@@ -885,6 +1138,322 @@
 
         // initial render diary & avatar
         renderDiary();
+
+        /* =========================
+           🎮 GAME ZONE SCRIPT
+           ========================= */
+
+        const gameModeButtons = document.querySelectorAll('.game-mode-btn');
+        const gameStatusBar = document.getElementById('game-status-bar');
+        const gameModeNameEl = document.getElementById('game-mode-name');
+        const gameScoreEl = document.getElementById('game-score');
+        const gameQIndexEl = document.getElementById('game-q-index');
+        const gameQTotalEl = document.getElementById('game-q-total');
+        const gameTimeLeftEl = document.getElementById('game-time-left');
+        const gameTimerFillEl = document.getElementById('game-timer-fill');
+
+        const gameQuestionCard = document.getElementById('game-question-card');
+        const gameQuestionTextEl = document.getElementById('game-question-text');
+        const gameChoicesEl = document.getElementById('game-choices');
+
+        const gameFeedbackBox = document.getElementById('game-feedback');
+        const gameFeedbackBriefEl = document.getElementById('game-feedback-brief');
+        const gameFeedbackExplainEl = document.getElementById('game-feedback-explain');
+        const gameNextBtn = document.getElementById('game-next-btn');
+
+        const gameResultBox = document.getElementById('game-result-box');
+        const gameFinalScoreEl = document.getElementById('game-final-score');
+        const gameFinalTotalEl = document.getElementById('game-final-total');
+        const gameResultMessageEl = document.getElementById('game-result-message');
+        const gameRestartBtn = document.getElementById('game-restart-btn');
+
+        const timePerQuestion = 20; // วินาที
+
+        const gameQuestionsHealthy = [
+            {
+                question: "ข้อใดคือ \"หมู่คาร์โบไฮเดรต\" (หมู่ที่ 1) ?",
+                choices: [
+                    "นม โยเกิร์ต ผักใบเขียว",
+                    "ข้าว ขนมปัง มัน เผือก",
+                    "เนื้อไก่ ปลา ไข่ ถั่ว",
+                    "ผลไม้และผักหลากสี"
+                ],
+                correctIndex: 1,
+                explanation: "หมู่ที่ 1 คือคาร์โบไฮเดรต เช่น ข้าว ขนมปัง มัน เผือก ให้พลังงานกับร่างกาย"
+            },
+            {
+                question: "ถ้าอยากได้โปรตีนแบบไขมันต่ำ ควรเลือกเมนูใด?",
+                choices: [
+                    "ไก่ทอดกรอบ",
+                    "ปลานึ่งมะนาว",
+                    "หมูสามชั้นทอด",
+                    "ไส้กรอกทอด"
+                ],
+                correctIndex: 1,
+                explanation: "ปลานึ่งมะนาวเป็นโปรตีนไขมันต่ำ ไม่ผ่านการทอด ช่วยลดไขมันอิ่มตัว"
+            },
+            {
+                question: "ข้อใดคือประโยชน์หลักของผักและผลไม้หลากสี?",
+                choices: [
+                    "ให้แต่แคลอรีสูง",
+                    "มีเกลือสูง",
+                    "ให้วิตามิน แร่ธาตุ และใยอาหาร",
+                    "ให้แต่ไขมันดี"
+                ],
+                correctIndex: 2,
+                explanation: "ผักผลไม้หลากสีอุดมด้วยวิตามิน แร่ธาตุ และใยอาหาร ช่วยระบบขับถ่ายและภูมิคุ้มกัน"
+            }
+        ];
+
+        const gameQuestionsDecision = [
+            {
+                question: "ถ้าอยากได้มื้อกลางวันที่สมดุลกว่า เลือกเมนูไหน?",
+                choices: [
+                    "ข้าวไก่ทอด + น้ำอัดลม",
+                    "ข้าวกล้องอกไก่ย่าง + สลัดผัก + น้ำเปล่า"
+                ],
+                correctIndex: 1,
+                explanation: "เมนูที่มีข้าวกล้อง โปรตีนไขมันต่ำ ผัก และน้ำเปล่า จะสมดุลกว่ามาก"
+            },
+            {
+                question: "ของว่างหลังเลิกเรียน ข้อใดเหมาะสมกว่า?",
+                choices: [
+                    "มันฝรั่งทอดกรอบ + น้ำอัดลม",
+                    "กล้วยหอม 1 ผล + นมจืด 1 แก้ว"
+                ],
+                correctIndex: 1,
+                explanation: "กล้วย + นมจืด ช่วยให้อิ่มได้นานกว่า และน้ำตาลไม่พุ่งเท่า snack + น้ำหวาน"
+            },
+            {
+                question: "ถ้าอยากลดน้ำตาล เลือกเครื่องดื่มอะไร?",
+                choices: [
+                    "ชานมไข่มุกหวานปกติ",
+                    "น้ำเปล่า หรือ น้ำใบเตยไม่หวาน"
+                ],
+                correctIndex: 1,
+                explanation: "น้ำเปล่าหรือน้ำสมุนไพรไม่หวาน ไม่มีน้ำตาลเพิ่ม เหมาะกับการลดน้ำตาล"
+            }
+        ];
+
+        const gameQuestionsLabel = [
+            {
+                question: "บนฉลากเขียนว่า \"น้ำตาล 30 กรัม\" ต่อขวด เทียบกับ \"น้ำตาล 8 กรัม\" ต่อกล่อง เมนูใดเหมาะสมกว่า?",
+                choices: [
+                    "เครื่องดื่มที่มีน้ำตาล 30 กรัม",
+                    "เครื่องดื่มที่มีน้ำตาล 8 กรัม"
+                ],
+                correctIndex: 1,
+                explanation: "เลือกตัวเลือกที่มีน้ำตาลน้อยกว่า เพื่อลดความเสี่ยงโรคไม่ติดต่อเรื้อรัง"
+            },
+            {
+                question: "ฉลาก A: พลังงาน 250 kcal / ถุง, ฉลาก B: พลังงาน 90 kcal / ถุง ถ้าอยากควบคุมน้ำหนักควรเลือกอะไร?",
+                choices: [
+                    "ฉลาก A",
+                    "ฉลาก B"
+                ],
+                correctIndex: 1,
+                explanation: "ฉลาก B ให้พลังงานน้อยกว่ามาก เหมาะกับการควบคุมน้ำหนัก"
+            },
+            {
+                question: "สัญลักษณ์ \"ทางเลือกสุขภาพ\" (Healthier Choice) บนฉลาก บอกอะไรเรา?",
+                choices: [
+                    "เป็นอาหารที่ไม่มีแคลอรีเลย",
+                    "เป็นตัวเลือกที่มีน้ำตาล ไขมัน หรือโซเดียมลดลงเมื่อเทียบกับสินค้าในกลุ่มเดียวกัน",
+                    "กินได้ไม่จำกัดปริมาณ",
+                    "เป็นอาหารสำหรับคนป่วยเท่านั้น"
+                ],
+                correctIndex: 1,
+                explanation: "สัญลักษณ์นี้ช่วยบอกว่าเป็นตัวเลือกที่ดีกว่าในหมวดเดียวกัน แต่ก็ต้องกินอย่างพอเหมาะอยู่ดี"
+            }
+        ];
+
+        const gameModeConfig = {
+            healthy: {
+                name: "Healthy Quiz – ความรู้พื้นฐานโภชนาการ",
+                questions: gameQuestionsHealthy
+            },
+            decision: {
+                name: "Food Decision – เลือกเมนูที่เหมาะสมกว่า",
+                questions: gameQuestionsDecision
+            },
+            label: {
+                name: "Label Challenge – อ่านฉลากโภชนาการ",
+                questions: gameQuestionsLabel
+            }
+        };
+
+        let gameCurrentMode = null;
+        let gameCurrentQuestions = [];
+        let gameCurrentIndex = 0;
+        let gameScore = 0;
+        let gameTimer = null;
+        let gameTimeLeft = timePerQuestion;
+        let gameAnswered = false;
+
+        function gameShuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function gameStartMode(modeKey) {
+            const config = gameModeConfig[modeKey];
+            if (!config) return;
+
+            gameCurrentMode = modeKey;
+            gameCurrentQuestions = gameShuffle(config.questions);
+            gameCurrentIndex = 0;
+            gameScore = 0;
+
+            gameModeNameEl.textContent = config.name;
+            gameScoreEl.textContent = gameScore;
+            gameQTotalEl.textContent = gameCurrentQuestions.length;
+
+            gameStatusBar.style.display = "block";
+            gameResultBox.style.display = "none";
+            gameFeedbackBox.style.display = "none";
+
+            gameModeButtons.forEach(btn => {
+                btn.classList.toggle("active", btn.dataset.mode === modeKey);
+            });
+
+            gameShowQuestion();
+        }
+
+        function gameShowQuestion() {
+            if (gameCurrentIndex >= gameCurrentQuestions.length) {
+                gameEnd();
+                return;
+            }
+
+            const q = gameCurrentQuestions[gameCurrentIndex];
+            gameAnswered = false;
+            gameQIndexEl.textContent = gameCurrentIndex + 1;
+
+            gameQuestionTextEl.textContent = q.question;
+            gameChoicesEl.innerHTML = "";
+            q.choices.forEach((choice, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "game-choice-btn";
+                btn.textContent = choice;
+                btn.addEventListener("click", () => gameHandleAnswer(idx));
+                gameChoicesEl.appendChild(btn);
+            });
+
+            gameQuestionCard.style.display = "block";
+            gameFeedbackBox.style.display = "none";
+
+            gameStartTimer();
+        }
+
+        function gameStartTimer() {
+            clearInterval(gameTimer);
+            gameTimeLeft = timePerQuestion;
+            gameTimeLeftEl.textContent = gameTimeLeft;
+            gameTimerFillEl.style.width = "100%";
+
+            gameTimer = setInterval(() => {
+                gameTimeLeft--;
+                if (gameTimeLeft < 0) {
+                    clearInterval(gameTimer);
+                    if (!gameAnswered) {
+                        gameHandleTimeout();
+                    }
+                    return;
+                }
+                gameTimeLeftEl.textContent = gameTimeLeft;
+                const percent = (gameTimeLeft / timePerQuestion) * 100;
+                gameTimerFillEl.style.width = percent + "%";
+            }, 1000);
+        }
+
+        function gameHandleAnswer(selectedIndex) {
+            if (gameAnswered) return;
+            gameAnswered = true;
+            clearInterval(gameTimer);
+
+            const q = gameCurrentQuestions[gameCurrentIndex];
+            const buttons = gameChoicesEl.querySelectorAll(".game-choice-btn");
+
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (idx === q.correctIndex) {
+                    btn.classList.add("correct");
+                }
+                if (idx === selectedIndex && idx !== q.correctIndex) {
+                    btn.classList.add("incorrect");
+                }
+            });
+
+            gameFeedbackBox.style.display = "block";
+
+            if (selectedIndex === q.correctIndex) {
+                gameScore += 10;
+                gameScoreEl.textContent = gameScore;
+                gameFeedbackBriefEl.textContent = "✅ ตอบถูก เก่งมาก!";
+            } else {
+                gameFeedbackBriefEl.textContent = "❌ ยังไม่ใช่คำตอบที่ดีที่สุด ลองดูคำอธิบายด้านล่างนะ";
+            }
+            gameFeedbackExplainEl.textContent = q.explanation;
+        }
+
+        function gameHandleTimeout() {
+            const q = gameCurrentQuestions[gameCurrentIndex];
+            const buttons = gameChoicesEl.querySelectorAll(".game-choice-btn");
+
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (idx === q.correctIndex) {
+                    btn.classList.add("correct");
+                }
+            });
+
+            gameFeedbackBox.style.display = "block";
+            gameFeedbackBriefEl.textContent = "⏱️ หมดเวลาแล้ว!";
+            gameFeedbackExplainEl.textContent = q.explanation;
+        }
+
+        function gameEnd() {
+            gameQuestionCard.style.display = "none";
+            gameFeedbackBox.style.display = "none";
+            gameResultBox.style.display = "block";
+
+            const totalScore = gameCurrentQuestions.length * 10;
+            gameFinalScoreEl.textContent = gameScore;
+            gameFinalTotalEl.textContent = totalScore;
+
+            const percent = (gameScore / totalScore) * 100;
+            let msg = "";
+            if (percent >= 80) {
+                msg = "เยี่ยมมาก! คุณเป็น FoodMind Master แล้ว 🎓";
+            } else if (percent >= 50) {
+                msg = "ดีมาก! เหลืออีกนิดเดียวก็เทพโภชนาการแล้ว 💪";
+            } else {
+                msg = "ไม่เป็นไรเลย นี่คือจุดเริ่มต้นของการเรียนรู้ ลองเล่นอีกหลาย ๆ รอบนะ 🌱";
+            }
+            gameResultMessageEl.textContent = msg;
+        }
+
+        // next / restart
+        gameNextBtn.addEventListener('click', () => {
+            gameCurrentIndex++;
+            gameShowQuestion();
+        });
+
+        gameRestartBtn.addEventListener('click', () => {
+            if (!gameCurrentMode) return;
+            gameStartMode(gameCurrentMode);
+        });
+
+        gameModeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modeKey = btn.dataset.mode;
+                gameStartMode(modeKey);
+            });
+        });
     </script>
 </body>
 </html>
